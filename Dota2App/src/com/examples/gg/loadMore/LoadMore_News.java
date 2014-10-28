@@ -388,7 +388,7 @@ public class LoadMore_News extends LoadMore_Base implements
 		live3 = (TextView) v2.findViewById(R.id.live3);
 
 		bkgImg2.setImageResource(myDrawables[rand_2]);
-		liveTitle.setText("Resent Results");
+		liveTitle.setText("Recent Results");
 
 		if (resultarray.length >= 1) {
 			liveMatch1.setText(resultarray[0]);
