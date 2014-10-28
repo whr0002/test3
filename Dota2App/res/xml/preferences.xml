@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Settings" >
+        
+        <ListPreference
+            android:title="Choose a default video quality for Twitch"
+            android:key="preferredQuality"
+            android:defaultValue="none"
+            android:entries="@array/listQualityStrings"
+            android:entryValues="@array/listQualityValues" />
+    	
+
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/about_preferences" >
+        <PreferenceScreen
+            android:summary="@string/summary"
+            android:title="Feedback" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/mail" >
+                <extra
+                    android:name="android.intent.extra.TEXT"
+                    android:value="" />
+            </intent>
+        </PreferenceScreen>
+
+        <com.examples.gg.settings.Dialog_Libraries
+            android:summary="License details for open source software"
+            android:title="Open source licenses" />
+
+        <com.examples.gg.settings.Dialog_Disclaimer
+            android:summary=""
+            android:title="Disclaimer" />
+        
+    </PreferenceCategory>
+
+</PreferenceScreen>

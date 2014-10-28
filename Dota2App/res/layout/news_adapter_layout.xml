@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dip"
+        android:background="@color/white" >
+
+        <RelativeLayout
+            android:id="@+id/news_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/date_layout" >
+
+            <TextView
+                android:id="@+id/news_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="5dip"
+                android:maxLines="2"
+                android:text="This is news title"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/date_layout"
+            android:layout_width="110dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true" >
+            
+            <TextView 
+                android:id="@+id/mydate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+                android:text="10 hours ago"
+                android:textSize="14sp"
+                />
+            
+        </RelativeLayout>
+        
+        <View
+        android:layout_width="fill_parent"
+        android:layout_height="3dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/drop_shadow" />
+
+</RelativeLayout>

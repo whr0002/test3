@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_grey" 
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="5dp"
+            android:background="@color/white" >
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dip"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/icon1"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:src="@drawable/loading" />
+
+                <TextView
+                    android:id="@+id/tName1"
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="ALLIANCE"
+                    android:ellipsize = "marquee"
+                    android:singleLine = "true"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dip"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/icon2"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:src="@drawable/loading" />
+
+                <TextView
+                    android:id="@+id/tName2"
+                    android:layout_width="120dip"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="MOUSESPORTS"
+                    android:ellipsize = "marquee"
+                    android:singleLine = "true"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/team1score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textView2"
+                android:layout_toLeftOf="@+id/textView2"
+                android:layout_marginRight="10dip"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/team2score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView2"
+                android:layout_alignBottom="@+id/textView2"
+                android:layout_toRightOf="@+id/textView2"
+                android:layout_marginLeft="10dip"
+                android:text="0" />
+
+            <TextView
+                android:id="@+id/liveStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/linearLayout1"
+                android:layout_centerHorizontal="true"
+                android:text="Live"
+                android:textColor="@color/red"
+                android:textSize="18sp" 
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/myTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/liveStatus"
+                android:layout_alignBottom="@+id/liveStatus"
+                android:layout_centerHorizontal="true"
+                android:text="timer" 
+                android:visibility="gone"/>
+
+            <View
+	        android:layout_width="fill_parent"
+	        android:layout_height="3dip"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentBottom="true"
+	        android:background="@drawable/drop_shadow" />
+	        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_margin="5dp"
+            android:background="@color/white" >
+			<RelativeLayout
+			    android:layout_width="wrap_content"
+			    android:layout_height="match_parent"
+			    android:layout_centerInParent="true"
+			    >
+	            <TextView
+	                android:id="@+id/textView1"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentTop="true"
+	                android:layout_centerHorizontal="true"
+	                android:layout_marginTop="5dp"
+	                android:text="Match Info"
+	                android:textColor="@android:color/black"
+	                android:textSize="18sp" />
+	
+	            <TextView
+	                android:id="@+id/tournamentName"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignParentLeft="true"
+	                android:layout_below="@+id/textView1"
+	                android:layout_marginLeft="20dip"
+	                android:layout_marginTop="10dip"
+	                android:text="Tournament: The Premier League V (Playoffs)" />
+	
+	            <TextView
+	                android:id="@+id/format"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignLeft="@+id/tournamentName"
+	                android:layout_below="@+id/tournamentName"
+	                android:layout_marginTop="5dip"
+	                android:text="Format: Best of 3" />
+	
+	            <TextView
+	                android:id="@+id/startTime"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_alignLeft="@+id/format"
+	                android:layout_below="@+id/format"
+	                android:layout_marginTop="5dip"
+	                android:layout_marginBottom="10dip"
+	                android:text="Start time: July 21, 2013 at 14:00" />
+            
+            </RelativeLayout>
+            <View
+	        android:layout_width="fill_parent"
+	        android:layout_height="3dip"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentBottom="true"
+	        android:background="@drawable/drop_shadow" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:background="@color/white" >
+            
+	        <TextView
+	            android:id="@+id/livelabel"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentTop="true"
+	            android:layout_centerHorizontal="true"
+	            android:layout_marginTop="5dp"
+	            android:text="Live Streams "
+	            android:textColor="@android:color/black"
+	            android:textSize="18sp" />
+	
+	        <TextView
+	            android:id="@+id/nolive"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerInParent="true"
+	            android:text="No Live currently!"
+	            android:textSize="18sp"
+	            android:visibility="gone"
+	             />
+	
+	        <ListView
+	            android:id="@+id/android:list"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content" 
+	            android:layout_below="@+id/livelabel">
+	        </ListView>
+	        
+	        <View
+	        android:layout_width="fill_parent"
+	        android:layout_height="3dip"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentBottom="true"
+	        android:background="@drawable/drop_shadow" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        layout="@layout/fullscreen_loading_indicator"
+        android:visibility="gone" >
+    </include>
+
+    <include
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        layout="@layout/retry"
+        android:visibility="gone" >
+    </include>
+
+</FrameLayout>

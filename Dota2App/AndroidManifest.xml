@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rs.dota"
+    android:installLocation="auto"
+    android:versionCode="1"
+    android:versionName="1.0.0" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+	<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+
+    <permission
+        android:name="com.example.gcm.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="20" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_o"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Sherlock.Light.DarkActionBar" >
+        
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        
+        <activity
+            android:name="com.examples.gg.loadMore.YoutubeActionBarActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name" 
+            android:theme="@style/Theme.Sherlock.Light.NoActionBar">
+        </activity>
+
+        <activity
+            android:name="com.rs.dota.SideMenuActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.examples.gg.loadMore.LoadMore_Activity_Channel"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+  			android:name="com.examples.gg.loadMore.LoadMore_Activity_Base"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.examples.gg.settings.SettingsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.rs.dota.InstructionActivity"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name="com.examples.gg.settings.FlashInstallerActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent"/>
+        
+        <activity 
+            android:name="com.examples.gg.loadMore.TipViewerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <activity
+            android:name="com.examples.gg.loadMore.LoadMore_Activity_Search"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.examples.gg.loadMore.LoadMore_Activity_Search_Youtube"
+            android:label="@string/app_name" >
+        </activity>
+        <activity 
+            android:name="com.examples.gg.loadMore.LoadMore_Activity_Search_Twitch"
+            android:label="@string/app_name" >
+        </activity>
+        <activity 
+            android:name="com.examples.gg.twitchplayers.VideoBuffer"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:label="@string/app_name" 
+            android:screenOrientation="landscape">
+        </activity>
+        <activity 
+            android:name="com.examples.gg.loadMore.MatchDetailsActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="io.vov.vitamio.activity.InitActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:windowSoftInputMode="stateAlwaysHidden" /> 
+        <activity 
+            android:name="com.examples.gg.loadMore.NewsViewerActivity"
+            android:label="@string/app_name" >
+        </activity>
+        
+        <receiver
+            android:name="com.rs.dota.MyBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.example.gcm" />
+            </intent-filter>
+        </receiver>
+        <receiver android:process=":remote" android:name="com.examples.gg.notificationservice.AlarmReceiver"></receiver>
+
+        <service android:name="com.rs.dota.MyIntentService" />
+        <service android:enabled="true" android:name="com.examples.gg.notificationservice.NotificationService" />
+   
+    </application>
+
+</manifest>

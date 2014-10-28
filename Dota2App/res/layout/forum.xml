@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <!-- We have to indicate that the listview is now a LoadMoreListView -->
+		<ProgressBar
+        android:id="@+id/myProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"/>
+
+       <WebView  
+           android:id="@+id/forumView"  
+           android:layout_width="match_parent" 
+           android:layout_height="match_parent" 
+           android:layout_below="@+id/myProgressBar"
+           android:layout_above="@+id/ad"
+           android:scrollbars="none" 
+           android:background="@color/white"/>  
+           
+    	<com.google.android.gms.ads.AdView
+	        android:id="@+id/ad"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        ads:adSize="BANNER"
+	        ads:adUnitId="ca-app-pub-6718707824713684/2153713458"/> 
+         <include
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            layout="@layout/fullscreen_loading_indicator"
+            android:visibility="gone" >
+        </include>
+
+        <include
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            layout="@layout/retry"
+            android:visibility="gone" >
+        </include>
+    
+
+</RelativeLayout>

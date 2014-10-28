@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <com.rs.dota.CustomImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/imageholder3" />
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/livetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginTop="5dip"
+        android:text="Today&apos;s matches "
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:id="@+id/liveview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/livetitle"
+        android:layout_below="@+id/subtitle"
+        android:layout_marginTop="5dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/lineup1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="AAA vs BBB "
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/live1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="Live!"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/liveview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/liveview1"
+        android:layout_below="@id/liveview1"
+        android:layout_marginTop="5dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/lineup2"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="AAA vs BBB "
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/live2"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="Live!"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/liveview3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/liveview2"
+        android:layout_below="@id/liveview2"
+        android:layout_marginTop="5dip"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/lineup3"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="AAA vs BBB "
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/live3"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:text="Live!"
+            android:textColor="@color/red"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/livetitle"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/livetitle"
+        android:text="(Press to view more)"
+        android:textColor="@color/silver"
+        android:textSize="13sp" />
+
+</RelativeLayout>
+</FrameLayout>

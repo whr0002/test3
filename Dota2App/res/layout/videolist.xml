@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@color/white" >
+
+    <FrameLayout
+        android:id="@+id/thumbholder"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="0dp" >
+
+
+
+        <com.rs.dota.CustomImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/imageholder3" />
+
+        <TextView
+            android:id="@+id/videolength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="#70000000"
+            android:text="3:15"
+            android:textColor="#FFFFFF" />
+    </FrameLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/videoinfolayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:layout_alignLeft="@+id/thumbholder"
+        android:layout_below="@+id/thumbholder" >
+
+        <RelativeLayout
+            android:id="@+id/videotitlelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/popupIconlayout"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp" 
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp">
+            
+
+            <TextView
+                android:id="@+id/videotitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="Title"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/videodesclayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            
+            android:layout_alignLeft="@+id/videotitlelayout"
+            android:layout_below="@+id/videotitlelayout" >
+            
+			<RelativeLayout
+			android:id="@+id/uploaderlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true">
+
+	            <TextView
+	                android:id="@+id/videouploader"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="DotaCinema"
+	                android:textColor="#A9A9A9"
+	                android:maxLines="1"
+	                android:textSize="14sp" />
+            </RelativeLayout>
+
+			<RelativeLayout
+	    	android:id="@+id/desclayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/uploaderlayout"
+            android:layout_alignParentRight="true">
+	            
+            	
+            	<RelativeLayout 
+            	android:id="@+id/dLayout"
+		        android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentRight="true">
+            	    <TextView
+	                android:id="@+id/Desc"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"    
+	                android:layout_alignParentRight="true"        
+	                android:layout_marginRight="5dp"
+	                android:text="40 minutes ago | 2300 views"
+	                android:textColor="#A9A9A9"
+	                android:textColorLink="@color/holo_blue_light"
+	                android:maxLines="1"
+	                android:textSize="14sp" />
+
+            	    <ImageView
+            	        android:id="@+id/watching"
+            	        android:layout_width="wrap_content"
+            	        android:layout_height="wrap_content"
+            	        android:layout_alignParentTop="true"
+            	        android:layout_toLeftOf="@+id/Desc"
+            	        android:layout_marginRight="3dp"
+            	        android:src="@drawable/people" 
+            	        android:visibility="gone"/>
+            	    
+            	</RelativeLayout>
+	            
+             </RelativeLayout>
+            
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/popupIconlayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true" >
+
+             <ImageView
+                android:id="@+id/popupIcon"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerCrop"
+                android:padding = "3dp"
+                android:src="@drawable/menu_icon2" /> 
+                
+             <!--   <com.examples.gg.adapters.MenuIconView
+                  android:id="@+id/popupIcon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:scaleType="centerCrop"
+                android:padding = "5dp"
+                android:src="@drawable/menu_icon2"
+               /> -->
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="2dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/drop_shadow" >
+    </View>
+
+    <View
+        android:layout_width="2dip"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/drop_shadow" >
+    </View>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="3dip"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/videoinfolayout"
+        android:background="@drawable/drop_shadow" />
+
+</RelativeLayout>

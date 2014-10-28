@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/thumbholder"
+        android:layout_width="160dip"
+        android:layout_height="90dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="5dip" >
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/loading" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/videotitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbholder"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:layout_toRightOf="@+id/thumbholder"
+        android:maxLines="2"
+        android:text="Title"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/videouploader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/videotitle"
+        android:layout_below="@+id/videotitle"
+        android:maxLines="2"
+        android:text="DotaCinema"
+        android:textColor="#A9A9A9"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/thumbholder"
+        android:layout_marginLeft="5dip"
+        android:layout_toRightOf="@+id/thumbholder"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="40 minutes ago | 2300 views"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</RelativeLayout>

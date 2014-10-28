@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Daily Dota2 Go</string>
+    <string name="package_name">com.rs.dota</string>
+    <string name="email">my.dailyappgo@gmail.com</string>
+    <string name="mail">mailto:my.dailyappgo@gmail.com?subject=Daily Dota2 Go Feedback</string>
+    <string name="summary">Help us make Daily Dota2 Go better</string>
+    
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="date">update time</string>
+    <string name="desc">album desc</string>
+    <string name="listviewpic">picture_front</string>
+    <string name="imageanimation">animationimage</string>
+    <string name="youtube">youtbe</string>
+    <string name="youku">youku</string>
+    <string name="startspark">Start My Dota Spark Now!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Side Menu Tutorial</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="loading">Loading...</string>
+    <string name="albumtitle">some title</string>
+    <string name="numberofvideos">50 videos</string>
+    <string name="network">Unable to get data, please try again later.</string>
+    <string name="retry">Retry</string>
+    <string name="teamName">Team</string>
+    <string name="iconDesc">ICON</string>
+    <string name="versus">vs</string>
+    <string name="matchTime">2h+</string>
+    <string name="about_preferences">About</string>
+    <string name="notices">Notices for files:</string>
+    <string name="open_source_link">A link</string>
+    <string name="apache_license">License</string>
+    <string name="error_player">There was an error initializing the YouTubePlayer (%1$s)</string>
+    <string name="action_bar_share_with">Share with…</string>
+    <string name="setting_preference"></string>
+	<string name="title_tip">Healthy tips:</string>
+</resources>

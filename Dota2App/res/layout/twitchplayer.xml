@@ -1,0 +1,50 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+  
+   <FrameLayout
+       android:id="@+id/fullscreen_custom_content"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:measureAllChildren="true"
+       android:background="@color/red"
+       android:visibility="gone" />
+  
+   <FrameLayout
+       android:id="@+id/main_content"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@color/red" >
+  
+       <WebView  
+           android:id="@+id/webview_player"  
+           android:layout_width="match_parent" 
+           android:layout_height="match_parent" 
+           android:scrollbars="none" 
+           android:background="@color/red"/>  
+           
+       <LinearLayout
+       android:id="@+id/side_content"  
+       android:orientation="vertical"
+       android:layout_width="300dip"  
+       android:layout_gravity="right"
+       android:layout_height="match_parent"
+       android:visibility="gone" >  
+       
+       <WebView  
+           android:id="@+id/webview_chat"  
+           android:layout_width="fill_parent"  
+           android:layout_height="fill_parent"
+           android:scrollbars="none" /> 
+                  
+      </LinearLayout >
+      
+     <include
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        layout="@layout/fullscreen_loading_indicator" >
+     </include>
+    
+    </FrameLayout > 
+</FrameLayout> 
+
