@@ -28,7 +28,7 @@ public class LoadMore_Activity_Search_Twitch extends LoadMore_Activity_Search
 	@Override
 	public void Initializing() {
 		// Give a title for the action bar
-		abTitle = "Search Lives";
+		abTitle = "Search Twitch";
 		
 		ab.setTitle(abTitle);
 

@@ -87,6 +87,8 @@
 
 	    </FrameLayout>
 	    
+
+	    
 	    <FrameLayout 
 	  		android:id="@+id/botFrame"
 	        android:layout_alignParentBottom="true"
@@ -98,7 +100,7 @@
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        ads:adSize="BANNER"
-	        ads:adUnitId="ca-app-pub-6718707824713684/2153713458"/> 
+	        ads:adUnitId="@string/bannerID"/> 
 	        
 	    </FrameLayout>
         <include
@@ -116,7 +118,19 @@
 	        layout="@layout/retry"
 	        android:visibility="gone" >
 	    </include>
-    </RelativeLayout>
+	    
 
+    </RelativeLayout>
+   	    <ListView
+	        android:id="@+id/suggested_listview"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="65dp"
+	        android:background="@color/white"
+	        android:layout_marginLeft="50dp"
+	        android:layout_marginRight="50dp" 
+	        android:layout_gravity="center"
+	        android:layout_alignParentTop="true"
+	        android:visibility="gone"/>
 
 </RelativeLayout>

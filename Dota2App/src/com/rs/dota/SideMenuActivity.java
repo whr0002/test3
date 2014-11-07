@@ -31,6 +31,7 @@ import com.examples.gg.data.Item;
 import com.examples.gg.data.SectionItem;
 import com.examples.gg.loadMore.FavoritesFragment;
 import com.examples.gg.loadMore.Forum_reddit;
+import com.examples.gg.loadMore.HistoryFragment;
 import com.examples.gg.loadMore.LoadMore_H_Subscription;
 import com.examples.gg.loadMore.LoadMore_M_Subscription;
 import com.examples.gg.loadMore.LoadMore_News;
@@ -38,8 +39,10 @@ import com.examples.gg.loadMore.LoadMore_Result;
 import com.examples.gg.loadMore.LoadMore_Twitch;
 import com.examples.gg.loadMore.LoadMore_UpcomingMatch;
 import com.examples.gg.loadMore.LoadMore_WorkoutNews;
+import com.examples.gg.loadMore.SubscriptionFragment;
 import com.examples.gg.loadMore.TipsFragment;
 import com.examples.gg.settings.SettingsActivity;
+import com.rs.dota.R;
 
 public class SideMenuActivity extends SherlockFragmentActivity {
 
@@ -130,7 +133,10 @@ public class SideMenuActivity extends SherlockFragmentActivity {
 		// Favorites
 		items.add(new SectionItem("My Dota"));
 		items.add(new EntryItem("Favorites", "Things I like", R.drawable.medal));
-
+		items.add(new EntryItem("Subscriptions", "Local subscriptions",
+				R.drawable.upcoming));
+		items.add(new EntryItem("History", "Watched videos", R.drawable.minutes));
+		
 		// "About" section
 		items.add(new SectionItem("About App"));
 		items.add(new EntryItem("Feedback", "Help us make it better",
@@ -183,7 +189,7 @@ public class SideMenuActivity extends SherlockFragmentActivity {
 
 		}
 		isFirstTimeUser();
-		this.validatingTips(this);
+//		this.validatingTips(this);
 
 	}
 
@@ -340,12 +346,18 @@ public class SideMenuActivity extends SherlockFragmentActivity {
 			ft.replace(R.id.content_frame, new FavoritesFragment());
 			break;
 
+		case 15:
+			ft.replace(R.id.content_frame, new SubscriptionFragment());
+			break;
+		case 16:
+			ft.replace(R.id.content_frame, new HistoryFragment());
+			break;
 //		case 15:
 //			ft.replace(R.id.content_frame, new TipsFragment());
 //			break;
 
 		// Section divider case 15------------------------
-		case 16:
+		case 18:
 			// Feedback
 
 			Intent email = new Intent(Intent.ACTION_VIEW);
@@ -354,7 +366,7 @@ public class SideMenuActivity extends SherlockFragmentActivity {
 			// startActivity(email);
 			break;
 
-		case 17:
+		case 19:
 			// Share Dota2TV
 			Intent sendIntent = new Intent();
 			sendIntent.setAction(Intent.ACTION_SEND);
@@ -365,7 +377,7 @@ public class SideMenuActivity extends SherlockFragmentActivity {
 			// startActivity(sendIntent);
 			break;
 
-		case 18:
+		case 20:
 			// Rate Dota2TV
 			Intent rateIntent = new Intent(Intent.ACTION_VIEW);
 			// Try Google play
@@ -467,10 +479,11 @@ public class SideMenuActivity extends SherlockFragmentActivity {
 			mForumFragment.goBack();
 			// go back to previous page
 			return true;
-		} else {
-			this.finish();
-			// finish the activity
-		}
+		} 
+//		else {
+//			this.finish();
+//			// finish the activity
+//		}
 		return super.onKeyDown(keyCode, event);
 	}
 }

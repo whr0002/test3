@@ -3,6 +3,7 @@ package com.examples.gg.loadMore;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.widget.SearchView;
+import com.examples.gg.data.CustomSearchView;
 import com.rs.dota.R;
 
 public class LoadMore_Activity_Search extends LoadMore_Activity_Base
@@ -10,11 +11,12 @@ public class LoadMore_Activity_Search extends LoadMore_Activity_Base
 
 	protected String queryHint = "Search";
 	protected String mQuery;
+	protected CustomSearchView searchView;
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
-		SearchView searchView = new SearchView(this.getSupportActionBar()
+		searchView = new CustomSearchView(this.getSupportActionBar()
 				.getThemedContext());
 		searchView.setQueryHint(queryHint);
 		searchView.setOnQueryTextListener(this);
@@ -26,11 +28,10 @@ public class LoadMore_Activity_Search extends LoadMore_Activity_Base
 						MenuItem.SHOW_AS_ACTION_IF_ROOM
 								| MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
 
-		menu.add(0, 0, 0, "Refresh")
-				.setIcon(R.drawable.ic_refresh)
-				.setShowAsAction(
-						MenuItem.SHOW_AS_ACTION_IF_ROOM
-								| MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+//		menu.add(0, 0, 0, "Refresh")
+//				.setIcon(R.drawable.ic_refresh)
+//				.setShowAsAction(
+//						MenuItem.SHOW_AS_ACTION_IF_ROOM);
 		return true;
 
 	}

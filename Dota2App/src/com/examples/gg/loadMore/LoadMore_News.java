@@ -50,8 +50,7 @@ import com.rs.dota.R;
 import com.rs.dota.SideMenuActivity;
 
 @SuppressLint({ "HandlerLeak", "NewApi" })
-public class LoadMore_News extends LoadMore_Base implements
-		SearchView.OnQueryTextListener {
+public class LoadMore_News extends LoadMore_Base{
 
 	private ImageView[] imageViews = null;
 	private ImageView imageView = null;
@@ -133,8 +132,8 @@ public class LoadMore_News extends LoadMore_Base implements
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				Intent i = new Intent(sfa, YoutubeActionBarActivity.class);
-				i.putExtra("isfullscreen", true);
-				i.putExtra("videoId", videolist.get(position).getVideoId());
+//				i.putExtra("isfullscreen", true);
+				i.putExtra("video", videolist.get(position));
 				startActivity(i);
 			}
 		});
@@ -160,25 +159,6 @@ public class LoadMore_News extends LoadMore_Base implements
 
 	}
 
-	@Override
-	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-
-		SearchView searchView = new SearchView(sfa.getSupportActionBar()
-				.getThemedContext());
-		searchView.setQueryHint("Search Youtube");
-		searchView.setOnQueryTextListener(this);
-
-		menu.add(0, 20, 0, "Search")
-				.setIcon(R.drawable.abs__ic_search)
-				.setActionView(searchView)
-				.setShowAsAction(
-						MenuItem.SHOW_AS_ACTION_IF_ROOM
-								| MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
-
-		menu.add(0, 0, 0, "").setIcon(R.drawable.ic_refresh)
-				.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
-
-	}
 
 	@Override
 	public void setListView() {
@@ -194,7 +174,7 @@ public class LoadMore_News extends LoadMore_Base implements
 
 		// setBannerInHeader();
 
-		vaa = new VideoArrayAdapter(sfa, titles, videolist, imageLoader);
+		vaa = new VideoArrayAdapter(sfa, videolist, imageLoader);
 		gv.setAdapter(vaa);
 
 		// reduce lag for gridview
@@ -746,22 +726,5 @@ public class LoadMore_News extends LoadMore_Base implements
 
 	}
 
-	@Override
-	public boolean onQueryTextSubmit(String query) {
-		// Toast.makeText(sfa, "You searched for: " + query, Toast.LENGTH_LONG)
-		// .show();
-
-		// starting search activity
-		Intent intent = new Intent(sfa, LoadMore_Activity_Search_Youtube.class);
-		intent.putExtra("query", query);
-		startActivity(intent);
-		return true;
-	}
-
-	@Override
-	public boolean onQueryTextChange(String newText) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 }

@@ -22,8 +22,7 @@ import com.examples.gg.twitchplayers.TwitchPlayer;
 import com.examples.gg.twitchplayers.VideoBuffer;
 import com.rs.dota.R;
 
-public class LoadMore_Twitch extends LoadMore_Base implements
-		SearchView.OnQueryTextListener {
+public class LoadMore_Twitch extends LoadMore_Base{
 	private SharedPreferences prefs;
 
 	@Override
@@ -54,7 +53,7 @@ public class LoadMore_Twitch extends LoadMore_Base implements
 
 		SearchView searchView = new SearchView(sfa.getSupportActionBar()
 				.getThemedContext());
-		searchView.setQueryHint("Search Twitch.tv");
+		searchView.setQueryHint("Search Twitch");
 		searchView.setOnQueryTextListener(this);
 
 		menu.add(0, 20, 0, "Search")
@@ -64,10 +63,10 @@ public class LoadMore_Twitch extends LoadMore_Base implements
 						MenuItem.SHOW_AS_ACTION_IF_ROOM
 								| MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
 
-		menu.add(0, 0, 0, "")
-				.setIcon(R.drawable.ic_refresh)
-				.setShowAsAction(
-						MenuItem.SHOW_AS_ACTION_IF_ROOM);
+//		menu.add(0, 0, 0, "")
+//				.setIcon(R.drawable.ic_refresh)
+//				.setShowAsAction(
+//						MenuItem.SHOW_AS_ACTION_IF_ROOM);
 
 	}
 

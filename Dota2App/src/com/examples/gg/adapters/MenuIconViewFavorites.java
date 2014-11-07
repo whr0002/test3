@@ -20,7 +20,7 @@ import com.rs.dota.R;
 
 public class MenuIconViewFavorites extends MenuIconView{
 
-	private FavoriteVideoRemovedCallback mfc;
+	public FavoriteVideoRemovedCallback mfc;
 	public MenuIconViewFavorites(Context context) {
 		super(context);
 	}

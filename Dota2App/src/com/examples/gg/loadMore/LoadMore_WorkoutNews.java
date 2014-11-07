@@ -71,7 +71,7 @@ public class LoadMore_WorkoutNews extends LoadMore_Base {
 		boolean pauseOnFling = true; // or false
 		PauseOnScrollListener listener = new PauseOnScrollListener(imageLoader, pauseOnScroll, pauseOnFling);
 		gv.setOnScrollListener(listener);
-		vaa = new VideoArrayAdapter(sfa, titles, videolist, imageLoader);
+		vaa = new VideoArrayAdapter(sfa, videolist, imageLoader);
 		gv.setAdapter(vaa);
 
 		if (isMoreVideos) {

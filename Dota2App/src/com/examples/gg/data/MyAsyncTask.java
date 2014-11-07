@@ -35,6 +35,7 @@ public class MyAsyncTask extends AsyncTask<String, String, String> {
 
 		setRetryListener(this.type);
 	}
+	public MyAsyncTask(){}
 
 	public void DisplayView(View viewToShow, View view_1ToHide,
 			View view_2ToHide) {

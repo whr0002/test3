@@ -12,7 +12,6 @@ import org.apache.http.conn.scheme.PlainSocketFactory;
 import org.apache.http.conn.scheme.Scheme;
 import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.ssl.SSLSocketFactory;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
@@ -40,12 +39,11 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 import com.nostra13.universalimageloader.utils.StorageUtils;
-import com.rs.dota.HttpClientImageDownloader;
 import com.rs.dota.R;
 
-public class VideoArrayAdapter extends ArrayAdapter<String> {
+public class VideoArrayAdapter extends ArrayAdapter<Video> {
 
-	private final ArrayList<String> values;
+	// private final ArrayList<String> values;
 	protected ArrayList<Video> videos;
 	private LayoutInflater inflater;
 
@@ -57,12 +55,12 @@ public class VideoArrayAdapter extends ArrayAdapter<String> {
 
 	protected ViewHolder holder;
 
-	public VideoArrayAdapter(Context context, ArrayList<String> values,
-			ArrayList<Video> videos, ImageLoader imageLoader) {
-		super(context, R.layout.videolist, values);
+	public VideoArrayAdapter(Context context, ArrayList<Video> videos,
+			ImageLoader imageLoader) {
+		super(context, R.layout.videolist, videos);
 
 		this.mContext = context;
-		this.values = values;
+		// this.values = values;
 		this.videos = videos;
 		this.imageLoader = imageLoader;
 		inflater = (LayoutInflater) context
@@ -109,11 +107,7 @@ public class VideoArrayAdapter extends ArrayAdapter<String> {
 					.diskCache(new UnlimitedDiscCache(cacheDir))
 					.memoryCache(new LruMemoryCache(2 * 1024 * 1024))
 					.memoryCacheSize(2 * 1024 * 1024)
-					.memoryCacheSizePercentage(13)
-					.imageDownloader(
-							new HttpClientImageDownloader(context,
-									new DefaultHttpClient(manager, params)))
-					.build();
+					.memoryCacheSizePercentage(13).build();
 			this.imageLoader.init(config);
 		}
 
@@ -121,10 +115,9 @@ public class VideoArrayAdapter extends ArrayAdapter<String> {
 				.showImageOnLoading(R.drawable.imageholder3)
 				.showImageForEmptyUri(R.drawable.imageholder3)
 				.showImageOnFail(R.drawable.imageholder3).cacheInMemory(true)
-				.delayBeforeLoading(300)
-				.cacheOnDisk(true).resetViewBeforeLoading(false)
-				.considerExifParams(true).bitmapConfig(Bitmap.Config.RGB_565)
-				.build();
+				.delayBeforeLoading(300).cacheOnDisk(true)
+				.resetViewBeforeLoading(false).considerExifParams(true)
+				.bitmapConfig(Bitmap.Config.RGB_565).build();
 	}
 
 	@Override
@@ -149,6 +142,9 @@ public class VideoArrayAdapter extends ArrayAdapter<String> {
 
 			holder.menuIcon = (ImageView) convertView
 					.findViewById(R.id.popupIcon);
+			
+			holder.watchingIcon = (ImageView) convertView
+					.findViewById(R.id.watching);
 
 			convertView.setTag(holder);
 		} else {
@@ -160,20 +156,23 @@ public class VideoArrayAdapter extends ArrayAdapter<String> {
 		// }else{
 		// holder.menuIcon.setVisibility(View.VISIBLE);
 		// }
-		holder.titleView.setText(values.get(position));
+		holder.titleView.setText(videos.get(position).getTitle());
 		holder.authorView.setText(videos.get(position).getAuthor());
-
+		holder.watchingIcon.setVisibility(View.GONE);
+		Video theVideo = videos.get(position);
 		// values for time and view counts should not be null
-		if (videos.get(position).isVideo) {
+		if (theVideo.isVideo) {
 
 			// For Youtube videos, showing update date and views
-			holder.countView.setText(videos.get(position).getUpdateTime()
+			holder.countView.setText("   "+videos.get(position).getUpdateTime()
 					+ " | " + videos.get(position).getViewCount());
+
+		} else if (theVideo.isPlaylist) {
+			holder.countView.setText(theVideo.getViewCount());
+
 		} else if (videos.get(position).isTwitch) {
 
 			// For Twitch, only showing number of viewers
-			holder.watchingIcon = (ImageView) convertView
-					.findViewById(R.id.watching);
 			holder.watchingIcon.setVisibility(View.VISIBLE);
 			holder.countView.setText(videos.get(position).getViewCount());
 

@@ -7,14 +7,14 @@ import android.content.Context;
 import com.examples.gg.data.Video;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-public class VaaForFavorites extends VideoArrayAdapter{
+public class VaaForHistory extends VideoArrayAdapter{
 
 	protected FavoriteVideoRemovedCallback mfc;
 	protected ArrayList<Video> mVideos;
-	public VaaForFavorites(Context context,	ArrayList<Video> videos, ImageLoader imageLoader) {
+	public VaaForHistory(Context context,	ArrayList<Video> videos, ImageLoader imageLoader) {
 		super(context, videos, imageLoader);
 	}
-	public VaaForFavorites(Context context,	ArrayList<Video> videos, ImageLoader imageLoader, FavoriteVideoRemovedCallback fc) {
+	public VaaForHistory(Context context,	ArrayList<Video> videos, ImageLoader imageLoader, FavoriteVideoRemovedCallback fc) {
 		super(context, videos, imageLoader);
 		this.mfc = fc;
 		this.mVideos = videos;
@@ -27,7 +27,7 @@ public class VaaForFavorites extends VideoArrayAdapter{
 	
 	@Override
 	public void setMenuListener(int pos){
-		holder.menuIcon.setOnClickListener(new MenuIconViewFavorites(this.mContext, holder,
+		holder.menuIcon.setOnClickListener(new MenuIconViewHistory(this.mContext, holder,
 				videos.get(pos), mfc));
 		
 	}

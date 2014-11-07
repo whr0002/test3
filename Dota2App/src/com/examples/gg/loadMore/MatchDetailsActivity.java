@@ -38,6 +38,7 @@ import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.widget.ShareActionProvider;
 import com.examples.gg.data.Match;
 import com.examples.gg.data.MyAsyncTask;
+import com.examples.gg.data.Video;
 import com.examples.gg.notificationservice.AlarmService;
 import com.examples.gg.settings.FlashInstallerActivity;
 import com.examples.gg.twitchplayers.TwitchPlayer;
@@ -215,8 +216,17 @@ public class MatchDetailsActivity extends SherlockListActivity {
 			// Toast.makeText(this, videoIds.get(position), Toast.LENGTH_SHORT)
 			// .show();
 
-			i.putExtra("isfullscreen", true);
-			i.putExtra("videoId", videoIds.get(position));
+//			i.putExtra("isfullscreen", true);
+			Video aVideo = new Video();
+			aVideo.setVideoId(videoIds.get(position));
+			aVideo.setVideoDesc("");
+			aVideo.setTitle("");
+			if(tName1 != null && tName2 != null){
+				int gameNum = position + 1;
+				aVideo.setTitle("Game " + gameNum + " " + tName1 + " vs " + tName2);
+				aVideo.setVideoDesc("Game " + gameNum + " " + tName1 + " vs " + tName2);
+			}
+			i.putExtra("video", aVideo);
 			startActivity(i);
 		} else {
 			

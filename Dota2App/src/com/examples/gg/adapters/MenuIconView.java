@@ -27,7 +27,7 @@ public class MenuIconView extends ImageView implements OnClickListener{
 	protected VideoArrayAdapter.ViewHolder mViewholder;
 	protected Video mVideo;
 	
-	protected final String prefName = "Favorites";
+	protected String prefName = "Favorites";
 	
 	public MenuIconView(Context context) {
 		super(context);
@@ -131,6 +131,9 @@ public class MenuIconView extends ImageView implements OnClickListener{
 		}
 		
 		if(!isExist(videos, mVideo)){
+			if(mVideo.isTwitch){
+				mVideo.setViewCount("----");
+			}
 			videos.add(mVideo);
 			String json = gson.toJson(videos);
 			favEditor.putString("json", json);
