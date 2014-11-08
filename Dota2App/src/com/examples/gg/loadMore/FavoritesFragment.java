@@ -18,7 +18,6 @@ import com.actionbarsherlock.app.ActionBar;
 import com.examples.gg.adapters.FavoriteVideoRemovedCallback;
 import com.examples.gg.adapters.VaaForFavorites;
 import com.examples.gg.data.Video;
-import com.examples.gg.twitchplayers.TwitchPlayer;
 import com.examples.gg.twitchplayers.VideoBuffer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -48,7 +47,7 @@ public class FavoritesFragment extends LoadMore_Base implements
 
 		ab.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
 
-		final String[] catagory = { "All", "Videos", "Channels", "Playlists" , "Twitch"};
+		final String[] catagory = { "All", "Videos", "Channels", "Playlists" , "News", "Twitch"};
 
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(
 				ab.getThemedContext(), R.layout.sherlock_spinner_item,
@@ -117,6 +116,12 @@ public class FavoritesFragment extends LoadMore_Base implements
 					Intent i = new Intent(sfa, VideoBuffer.class);
 					i.putExtra("video", videolist.get(position).getVideoId());
 					startActivity(i);
+				} else if(v.isNews){
+					// Start News activity
+					String url = videolist.get(position).getVideoId();
+					Intent i = new Intent(sfa,NewsViewerActivity.class);
+					i.putExtra("uri", url);
+					startActivity(i);
 				}
 			}
 		});
@@ -173,7 +178,9 @@ public class FavoritesFragment extends LoadMore_Base implements
 					// only show playlists
 					vl.add(v);
 			
-				} else if (searchType == 4 && v.isTwitch){
+				} else if (searchType == 4 && v.isNews){
+					vl.add(v);
+				} else if (searchType == 5 && v.isTwitch){
 					vl.add(v);
 				}
 

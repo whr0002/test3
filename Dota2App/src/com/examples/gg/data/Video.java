@@ -124,17 +124,7 @@ public class Video implements Parcelable {
 
 	}
 
-	public Video(Parcel in) {
-		title = in.readString();
-		videoId = in.readString();
-		videoDesc = in.readString();
-		thumbnailUrl = in.readString();
-		author = in.readString();
-		uploaderThumUrl = in.readString();
-		viewCount = in.readString();
-		duration = in.readString();
 
-	}
 
 	public String getTitle() {
 
@@ -187,7 +177,19 @@ public class Video implements Parcelable {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	public Video(Parcel in) {
+		title = in.readString();
+		videoId = in.readString();
+		videoDesc = in.readString();
+		thumbnailUrl = in.readString();
+		author = in.readString();
+		uploaderThumUrl = in.readString();
+		viewCount = in.readString();
+		duration = in.readString();
+		updateTime = in.readString();
 
+	}
 	@Override
 	public void writeToParcel(Parcel dest, int flag) {
 		// TODO Auto-generated method stub
@@ -199,6 +201,7 @@ public class Video implements Parcelable {
 		dest.writeString(uploaderThumUrl);
 		dest.writeString(viewCount);
 		dest.writeString(duration);
+		dest.writeString(updateTime);
 
 	}
 }
