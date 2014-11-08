@@ -27,7 +27,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentBottom="true"
 	        ads:adSize="BANNER"
-	        ads:adUnitId="ca-app-pub-6718707824713684/2153713458"/> 
+	        ads:adUnitId="@string/bannerID"/> 
          <include
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
