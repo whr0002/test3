@@ -1,6 +1,7 @@
 package com.rs.dota;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -42,6 +43,10 @@ import com.examples.gg.loadMore.LoadMore_WorkoutNews;
 import com.examples.gg.loadMore.SubscriptionFragment;
 import com.examples.gg.loadMore.TipsFragment;
 import com.examples.gg.settings.SettingsActivity;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Logger;
+import com.google.android.gms.analytics.Tracker;
 import com.rs.dota.R;
 
 public class SideMenuActivity extends SherlockFragmentActivity {
@@ -60,8 +65,7 @@ public class SideMenuActivity extends SherlockFragmentActivity {
 	private String appName;
 	private String packageName;
 	private String mail;
-	// private InterstitialAd interstitial;
-
+	
 	// private boolean doubleBackToExitPressedOnce = false;
 
 	@Override
@@ -69,18 +73,8 @@ public class SideMenuActivity extends SherlockFragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.drawer_main);
 
-		// Create the interstitial
-		// interstitial = new InterstitialAd(this,
-		// "ca-app-pub-6718707824713684/7369125856");
-
-		// Create ad request
-		// AdRequest adRequest = new AdRequest();
-		// adRequest.addTestDevice("5E4CA696BEB736E734DD974DD296F11A");
-		// Begin loading your interstitial
-		// interstitial.loadAd(adRequest);
-
-		// Set Ad Listener to use the callbacks below
-		// interstitial.setAdListener(this);
+		((MyApplication) getApplication()).getTracker(MyApplication.TrackerName.APP_TRACKER);
+		
 		appName = getResources().getString(R.string.app_name);
 		packageName = getResources().getString(R.string.package_name);
 		mail = getResources().getString(R.string.mail);
@@ -485,5 +479,19 @@ public class SideMenuActivity extends SherlockFragmentActivity {
 //			// finish the activity
 //		}
 		return super.onKeyDown(keyCode, event);
+	}
+	
+	@Override
+	public void onStart(){
+		super.onStart();
+		//Get an Analytics tracker to report app starts & uncaught exceptions etc.
+		GoogleAnalytics.getInstance(this).reportActivityStart(this);
+
+	}
+	
+	@Override
+	public void onStop(){
+		super.onStart();
+		GoogleAnalytics.getInstance(this).reportActivityStop(this);
 	}
 }

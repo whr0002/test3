@@ -110,7 +110,7 @@ public class YoutubeActionBarActivity extends SherlockFragmentActivity
 		interstitialID = this.getResources().getString(R.string.interstitialID);
 		apiKey = this.getResources().getString(R.string.apiKey);
 		mRandom = new Random();
-		if (mRandom.nextInt(10) > 7) {
+//		if (mRandom.nextInt(10) > 7) {
 			// Loading Ad when close a video at 20%
 			mInterstitial = new InterstitialAd(this);
 			mInterstitial.setAdUnitId(interstitialID);
@@ -118,7 +118,7 @@ public class YoutubeActionBarActivity extends SherlockFragmentActivity
 					.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
 					.addTestDevice("5E4CA696BEB736E734DD974DD296F11A").build();
 			mInterstitial.loadAd(adRequest);
-		}
+//		}
 
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager

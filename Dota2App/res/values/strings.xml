@@ -12,7 +12,7 @@
     <string name="browserKey">AIzaSyDbZXdsqAtXVCfaJQU0PhxvoToyhhv7Mwo</string>
     <string name="numOfResults">20</string>
     <string name="messageForEmptySubs">You have no subscriptions right now. When you find a channel and add the channel in Favorites, it will automatically subscribes the channel for you.</string>
-    
+
     
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>

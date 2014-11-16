@@ -155,7 +155,7 @@ public class VideoBuffer extends Activity implements OnInfoListener,
 		// } catch (Exception e) {
 		// }
 		mRandom = new Random();
-		if(mRandom.nextInt(10)>6){
+//		if(mRandom.nextInt(10)>6){
 			// Loading Ad when close a video at 30%
 	        mInterstitial = new InterstitialAd(this);
 	        mInterstitial.setAdUnitId("ca-app-pub-6718707824713684/9676980256");
@@ -164,7 +164,7 @@ public class VideoBuffer extends Activity implements OnInfoListener,
 		    .addTestDevice("5E4CA696BEB736E734DD974DD296F11A")
 		    .build();
 			mInterstitial.loadAd(adRequest);
-		}
+//		}
 
 		// Getting twitch sources
 		try {
